@@ -1,0 +1,30 @@
+.posts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.posts div.post {
+  width: calc(100% - 2px);
+  display: flex;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.posts div.post a, .posts div.post.title span {
+  text-decoration: none;
+  color: black;
+}
+
+.posts div.post.title span {
+  font-weight: bold;
+}
+
+.postTitle {
+  width: calc(85% - 2rem);
+  padding: .5rem 1rem;
+}
+
+.postAuthor {
+  width: calc(15% - 2rem);
+  padding: .5rem 1rem;
+}

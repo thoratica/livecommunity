@@ -1,0 +1,25 @@
+.Login main {
+  position: fixed;
+  z-index: 5;
+  background-color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: calc(25vh - 2rem);
+  width: calc(30vw - 3rem);
+  border-radius: .5rem;
+  padding: 1rem 1.5rem;
+}
+
+.Login main h2 {
+  margin: 0;
+}
+
+.Login .dim {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: #0000007a;
+}

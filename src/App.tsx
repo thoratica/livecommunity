@@ -1,26 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
+import PostList from './components/PostList';
+import View from './components/View';
+import Login from './components/Login';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component<{}, { login: boolean; }> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      login: false
+    }
+  }
+  render() {
+    return (
+      <div className="App">
+        <header>
+          <h1>LIVE Community</h1>
+          {(() => {
+            if (true) {
+              return (
+                <button onClick={() => this.setState({ login: true })}>로그인</button>
+              );
+            } else {
+              return (
+                <a href="/login">
+                  <button>글쓰기</button>
+                </a>
+              );
+            }
+          })()}
+        </header>
+        <Login show={this.state.login} />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={PostList} />
+            <Route exact path="/view/:id" component={View} />
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
