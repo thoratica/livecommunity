@@ -28,7 +28,7 @@ class Login extends React.Component<LoginProps, {}> {
         if (data === 'false')
           return alert('아이디 또는 비밀번호가 잘못되었습니다.');
         localStorage.setItem('token', data);
-        window.location.reload()
+        window.location.reload();
       });
   }
   signup(e: any) {
@@ -50,7 +50,7 @@ class Login extends React.Component<LoginProps, {}> {
       .then((data) => {
         if (data === 'false') return alert('이미 존재하는 아이디입니다.');
         localStorage.setItem('token', data);
-        window.location.reload()
+        window.location.reload();
       });
   }
   render() {
@@ -65,11 +65,13 @@ class Login extends React.Component<LoginProps, {}> {
                 <Tab>회원가입</Tab>
               </TabList>
               <TabPanel>
-                <img
-                  className="banner"
-                  src="https://i.ibb.co/z5cVy1q/ad.png"
-                  alt=""
-                />
+                <a href="https://ad.commu.live">
+                  <img
+                    className="banner"
+                    src="https://i.ibb.co/z5cVy1q/ad.png"
+                    alt=""
+                  />
+                </a>
                 <form onSubmit={this.login}>
                   <div className="inputs">
                     <label>

@@ -55,4 +55,9 @@ input:focus {
 .Login .banner {
   width: 100%;
   border-radius: .5rem;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
