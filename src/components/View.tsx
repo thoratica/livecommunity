@@ -85,14 +85,20 @@ class View extends React.Component<Props, State> {
         <div className="content">{this.state.content}</div>
         <hr />
         <h3>댓글 {comments.length}개</h3>
-        <form className="flex" onSubmit={(e) => this.comment(e, this)}>
-          <input type="text" placeholder="댓글 입력"></input>
-          <input
-            type="submit"
-            value="올리기"
-            className="button comment"
-          ></input>
-        </form>
+        {(() => {
+          if (window.localStorage.getItem('token') !== null) {
+            return (
+              <form className="flex" onSubmit={(e) => this.comment(e, this)}>
+                <input type="text" placeholder="댓글 입력"></input>
+                <input
+                  type="submit"
+                  value="올리기"
+                  className="button comment"
+                ></input>
+              </form>
+            );
+          }
+        })()}
         <div className="commentList">{comments}</div>
       </div>
     );

@@ -67,7 +67,7 @@ class Login extends React.Component<LoginProps, {}> {
               <TabPanel>
                 <img
                   className="banner"
-                  src="https://i.ibb.co/wr443vC/image.png"
+                  src="https://i.ibb.co/z5cVy1q/ad.png"
                   alt=""
                 />
                 <form onSubmit={this.login}>
