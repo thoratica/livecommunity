@@ -3,7 +3,7 @@ import PostList from './components/PostList';
 import View from './components/View';
 import Login from './components/Login';
 import Write from './components/Write';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import './App.css';
 
 class App extends React.Component<{}, { login: boolean }> {
@@ -27,9 +27,9 @@ class App extends React.Component<{}, { login: boolean }> {
               );
             } else {
               return (
-                <a className="button" href="/write">
+                <Link className="button" to="/write">
                   글쓰기
-                </a>
+                </Link>
               );
             }
           })()}
