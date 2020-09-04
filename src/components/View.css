@@ -1,5 +1,6 @@
 .View .back {
   margin: 0 1rem 1rem 0;
+  display: inline-block;
 }
 
 .View .top {
@@ -35,6 +36,7 @@ hr {
 .View .flex {
   display: flex;
   margin-bottom: 1rem;
+  flex-direction: row;
 }
 
 .View input[type="text"] {

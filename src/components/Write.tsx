@@ -2,6 +2,8 @@ import React from 'react';
 import socketio from 'socket.io-client';
 import config from '../config.json';
 import './Write.css';
+import '../App.css';
+import Header from './Header';
 
 const socket = socketio.connect(config.server);
 
@@ -22,7 +24,8 @@ class Write extends React.Component {
   }
   render() {
     return (
-      <div className="write">
+      <div className="App">
+        <Header />
         <h2>글쓰기</h2>
         <form onSubmit={this.post}>
           <label>

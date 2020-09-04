@@ -1,15 +1,15 @@
-.write form {
+.App form {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.write label {
+.App label {
   display: flex;
   margin: .3rem 0;
 }
 
-.write input[type="text"], .write textarea {
+.App input[type="text"], .App textarea {
   margin-left: auto !important;
   border: 1px solid #e2e2e2;
   border-radius: .4rem;
@@ -18,11 +18,11 @@
   width: calc(100% - 4rem);
 }
 
-.write textarea {
+.App textarea {
   height: 40vh;
   resize: vertical;
 }
 
-.write textarea:focus {
+.App textarea:focus {
   outline: none;
 }

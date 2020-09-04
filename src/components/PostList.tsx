@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 import config from '../config.json';
 import './PostList.css';
 
-interface Props {
-  rows: number;
-}
+interface Props {}
 
 interface States {
   data: any;
