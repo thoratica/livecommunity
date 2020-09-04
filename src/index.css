@@ -156,3 +156,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.hljs {
+  border-radius: .5rem;
+}

@@ -43,6 +43,10 @@ class View extends React.Component<Props, State> {
         ).json()
       );
     });
+    // eslint-disable-next-line
+    eval(`document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });`)
   }
   back() {
     window.location.href = '/';
