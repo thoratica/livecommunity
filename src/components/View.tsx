@@ -3,9 +3,6 @@ import socketio from 'socket.io-client';
 import fetch from 'node-fetch';
 import config from '../config.json';
 import './View.css';
-import { Link } from 'react-router-dom';
-import '../App.css';
-import Header from './Header';
 
 interface Props {
   match: any;
@@ -44,6 +41,9 @@ class View extends React.Component<Props, State> {
       );
     });
   }
+  back() {
+    window.location.href = '/';
+  }
   comment(e: any, sans: any) {
     e.preventDefault();
     e.persist();
@@ -55,6 +55,7 @@ class View extends React.Component<Props, State> {
           username: data.username,
           content: e.target[0].value,
         });
+        e.target[0].value = '';
       });
   }
   render() {
@@ -72,30 +73,27 @@ class View extends React.Component<Props, State> {
       );
     }
     return (
-      <div className="App">
-        <Header />
-        <div className="View">
-          <Link className="button back" to="/">
-            목록으로
-          </Link>
-          <div className="top">
-            <div className="title">{this.state.title}</div>
-            <div className="author">by {this.state.author}</div>
-          </div>
-          <hr />
-          <div className="content">{this.state.content}</div>
-          <hr />
-          <h3>댓글 {comments.length}개</h3>
-          <form className="flex" onSubmit={(e) => this.comment(e, this)}>
-            <input type="text" placeholder="댓글 입력"></input>
-            <input
-              type="submit"
-              value="올리기"
-              className="button comment"
-            ></input>
-          </form>
-          <div className="commentList">{comments}</div>
+      <div className="View">
+        <button className="back" onClick={this.back}>
+          목록으로
+        </button>
+        <div className="top">
+          <div className="title">{this.state.title}</div>
+          <div className="author">by {this.state.author}</div>
         </div>
+        <hr />
+        <div className="content">{this.state.content}</div>
+        <hr />
+        <h3>댓글 {comments.length}개</h3>
+        <form className="flex" onSubmit={(e) => this.comment(e, this)}>
+          <input type="text" placeholder="댓글 입력"></input>
+          <input
+            type="submit"
+            value="올리기"
+            className="button comment"
+          ></input>
+        </form>
+        <div className="commentList">{comments}</div>
       </div>
     );
   }
