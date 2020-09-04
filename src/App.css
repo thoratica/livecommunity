@@ -33,3 +33,21 @@ button:focus, .button:focus {
   background-color: #007eff;
   color: white;
 }
+
+@media (max-width: 1280px) {
+  .App {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 720px) {
+  .App {
+    width: 90vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    width: 95vw;
+  }
+}

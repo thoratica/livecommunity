@@ -61,3 +61,47 @@ input:focus {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+@media (max-width: 1280px) {
+  .Login main {
+    width: calc(50vw - 3rem);
+  }
+  .Login input[type="text"],
+  .Login input[type="password"],
+  .Login input[type="email"] {
+    width: calc(50vw - 9rem) !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .Login main {
+    width: calc(70vw - 3rem);
+  }
+  .Login input[type="text"],
+  .Login input[type="password"],
+  .Login input[type="email"] {
+    width: calc(70vw - 9rem) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .Login main {
+    width: calc(90vw - 3rem);
+  }
+  .Login input[type="text"],
+  .Login input[type="password"],
+  .Login input[type="email"] {
+    width: calc(90vw - 9rem) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .Login main {
+    width: calc(95vw - 3rem);
+  }
+  .Login input[type="text"],
+  .Login input[type="password"],
+  .Login input[type="email"] {
+    width: calc(95vw - 9rem) !important;
+  }
+}

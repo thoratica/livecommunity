@@ -1,5 +1,6 @@
 import React from 'react';
 import socketio from 'socket.io-client';
+import OpenGraph from 'set-open-graph';
 import fetch from 'node-fetch';
 import Markdown from 'react-markdown/with-html';
 import config from '../config.json';
@@ -18,6 +19,12 @@ interface State {
 }
 
 const socket = socketio.connect(config.server);
+
+const openGraph = new OpenGraph({
+  og: {
+    site_name: 'LIVE Community'
+  }
+})
 
 class View extends React.Component<Props, State> {
   constructor(props: any) {
@@ -54,6 +61,7 @@ class View extends React.Component<Props, State> {
   comment(e: any, sans: any) {
     e.preventDefault();
     e.persist();
+    if (e.target[0].value === '') return
     fetch(`${config.server}/userInfo?token=${localStorage.getItem('token')}`)
       .then((res) => res.json())
       .then((data) => {
@@ -78,6 +86,16 @@ class View extends React.Component<Props, State> {
       });
   }
   render() {
+    openGraph.set({
+      og: {
+        title: this.state.title,
+        description: this.state.content,
+        locale: {
+          current: 'ko_KR'
+        },
+        url: window.location.href,
+      }
+    })
     fetch(`${config.server}/userInfo?token=${localStorage.getItem('token')}`)
       .then((res) => res.json())
       .then((data) => {
