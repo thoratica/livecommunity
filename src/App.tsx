@@ -17,7 +17,7 @@ class App extends React.Component<{}, { login: boolean }> {
     return (
       <div className="App">
         <header>
-          <h1>LIVE Community</h1>
+          <h1>LIVECommunity</h1>
           {(() => {
             if (window.localStorage.getItem('token') === null) {
               return (
