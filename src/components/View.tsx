@@ -1,6 +1,7 @@
 import React from 'react';
 import socketio from 'socket.io-client';
 import fetch from 'node-fetch';
+import Markdown from 'react-markdown/with-html';
 import config from '../config.json';
 import './View.css';
 
@@ -13,6 +14,7 @@ interface State {
   content: string;
   author: string;
   comments: Array<any>;
+  delete: any;
 }
 
 const socket = socketio.connect(config.server);
@@ -25,19 +27,20 @@ class View extends React.Component<Props, State> {
       content: '',
       author: '',
       comments: [],
+      delete: '',
     };
   }
   async componentDidMount() {
     this.setState(
-      (await (await fetch(`${config.server}/posts`)).json())[
-        this.props.match.params.id
-      ]
+      await (
+        await fetch(`${config.server}/post/${this.props.match.params.id}`)
+      ).json()
     );
     socket.on('updated', async () => {
       this.setState(
-        (await (await fetch(`${config.server}/posts`)).json())[
-          this.props.match.params.id
-        ]
+        await (
+          await fetch(`${config.server}/post/${this.props.match.params.id}`)
+        ).json()
       );
     });
   }
@@ -58,7 +61,34 @@ class View extends React.Component<Props, State> {
         e.target[0].value = '';
       });
   }
+  remove(e: any, sans: any) {
+    e.preventDefault();
+    e.persist();
+    fetch(`${config.server}/userInfo?token=${localStorage.getItem('token')}`)
+      .then((res) => res.json())
+      .then((data) => {
+        socket.emit('delete', {
+          id: sans.props.match.params.id,
+        });
+        window.location.href = '/';
+      });
+  }
   render() {
+    fetch(`${config.server}/userInfo?token=${localStorage.getItem('token')}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.username === this.state.author) {
+          this.setState({
+            delete: (
+              <button className="delete" onClick={(e) => this.remove(e, this)}>
+                삭제
+              </button>
+            ),
+          });
+        } else {
+          this.setState({ delete: <></> });
+        }
+      });
     let comments = [];
     for (let i = 0; i < Object.keys(this.state.comments).length; i++) {
       comments.push(
@@ -82,7 +112,10 @@ class View extends React.Component<Props, State> {
           <div className="author">by {this.state.author}</div>
         </div>
         <hr />
-        <div className="content">{this.state.content}</div>
+        <div className="content">
+          <Markdown source={this.state.content} escapeHtml={false} />
+        </div>
+        {this.state.delete}
         <hr />
         <h3>댓글 {comments.length}개</h3>
         {(() => {

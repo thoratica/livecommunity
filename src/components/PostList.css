@@ -20,12 +20,17 @@
 }
 
 .postTitle {
-  width: calc(85% - 2rem);
+  width: calc(75% - 2rem);
   padding: .7rem 1rem;
 }
 
 .postAuthor {
   width: calc(15% - 2rem);
+  padding: .7rem 1rem;
+}
+
+.postViews {
+  width: calc(10% - 2rem);
   padding: .7rem 1rem;
 }
 
@@ -37,4 +42,9 @@
 .postList .noposts {
   color: #646464;
   margin: 2rem auto;
+}
+
+.commentCount {
+  margin-left: .3rem;
+  color: #007eff;
 }

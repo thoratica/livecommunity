@@ -16,6 +16,8 @@ class Write extends React.Component {
           title: e.target[0].value,
           content: e.target[1].value,
           author: data.username,
+          comments: [],
+          views: 0,
         });
         window.location.href = '/';
       });

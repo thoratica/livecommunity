@@ -36,17 +36,26 @@ class PostList extends React.Component<Props, States> {
     let post = [];
     if (Object.keys(this.state.data).length === 0) {
       post.push(
-        <h2 className="noposts" key={'noposts'}>글이 없습니다.</h2>
-      )
+        <h2 className="noposts" key={'noposts'}>
+          글이 없습니다.
+        </h2>
+      );
     } else {
       for (let i = 0; i < Object.keys(this.state.data).length; i++) {
         post.push(
           <div className="post" key={i}>
-            <Link to={`/view/${i + 1}`} className="postTitle">
+            <Link
+              to={`/view/${Object.keys(this.state.data)[i]}`}
+              className="postTitle"
+            >
               {this.state.data[Object.keys(this.state.data)[i]].title}
+              <span className="commentCount">({this.state.data[Object.keys(this.state.data)[i]].comments.length})</span>
             </Link>
             <span className="postAuthor">
               {this.state.data[Object.keys(this.state.data)[i]].author}
+            </span>
+            <span className="postViews">
+              {this.state.data[Object.keys(this.state.data)[i]].views}
             </span>
           </div>
         );
@@ -57,6 +66,7 @@ class PostList extends React.Component<Props, States> {
         <div className="post title">
           <span className="postTitle">제목</span>
           <span className="postAuthor">작성자</span>
+          <span className="postViews">조회수</span>
         </div>
         <div className="postList">{post}</div>
       </div>

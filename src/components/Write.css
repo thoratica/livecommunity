@@ -9,7 +9,8 @@
   margin: .3rem 0;
 }
 
-.App input[type="text"], .App textarea {
+.App input[type="text"],
+.App textarea {
   margin-left: auto !important;
   border: 1px solid #e2e2e2;
   border-radius: .4rem;
