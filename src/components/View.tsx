@@ -61,7 +61,7 @@ class View extends React.Component<Props, State> {
   comment(e: any, sans: any) {
     e.preventDefault();
     e.persist();
-    if (e.target[0].value === '') return
+    if (e.target[0].value.replace(/ /gi, '') === '') return
     fetch(`${config.server}/userInfo?token=${localStorage.getItem('token')}`)
       .then((res) => res.json())
       .then((data) => {
