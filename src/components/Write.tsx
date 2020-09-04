@@ -9,7 +9,11 @@ class Write extends React.Component {
   post(e: any) {
     e.preventDefault();
     e.persist();
-    if (e.target[0].value.replace(/ /gi, '') === '' || e.target[1].value.replace(/ /gi, '') === '') return
+    if (
+      e.target[0].value.replace(/ /gi, '') === '' ||
+      e.target[1].value.replace(/ /gi, '') === ''
+    )
+      return;
     fetch(`${config.server}/userInfo?token=${localStorage.getItem('token')}`)
       .then((res) => res.json())
       .then((data) => {
