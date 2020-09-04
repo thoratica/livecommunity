@@ -1,0 +1,28 @@
+.write form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.write label {
+  display: flex;
+  margin: .3rem 0;
+}
+
+.write input[type="text"], .write textarea {
+  margin-left: auto !important;
+  border: 1px solid #e2e2e2;
+  border-radius: .4rem;
+  font-size: 1rem;
+  padding: .3rem .5rem;
+  width: calc(100% - 4rem);
+}
+
+.write textarea {
+  height: 40vh;
+  resize: vertical;
+}
+
+.write textarea:focus {
+  outline: none;
+}

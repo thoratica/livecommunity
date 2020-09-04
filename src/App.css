@@ -9,13 +9,13 @@ header {
   align-items: center;
 }
 
-button {
+button, .button {
   background-color: transparent;
   border: 1px solid #007eff;
   display: flex;
   padding: .3rem 1rem;
   font-size: 1rem;
-  border-radius: 10rem;
+  border-radius: .4rem;
   color: #007eff;
   transition: .5s;
   cursor: pointer;
@@ -23,7 +23,13 @@ button {
   text-decoration: none;
 }
 
-button:hover {
+button:hover, .button:hover {
+  background-color: #007eff;
+  color: white;
+}
+
+button:focus, .button:focus {
+  outline: none;
   background-color: #007eff;
   color: white;
 }

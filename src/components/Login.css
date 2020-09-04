@@ -5,7 +5,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: calc(25vh - 2rem);
+  height: max-content;
   width: calc(30vw - 3rem);
   border-radius: .5rem;
   padding: 1rem 1.5rem;
@@ -22,4 +22,37 @@
   top: 0;
   left: 0;
   background-color: #0000007a;
+}
+
+.Login form .inputs {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .3rem;
+}
+
+.Login form .inputs label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .3rem 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+.Login input[type="text"],
+.Login input[type="password"],
+.Login input[type="email"] {
+  margin-left: auto !important;
+  border: 1px solid #e2e2e2;
+  border-radius: .4rem;
+  font-size: 1rem;
+  padding: .3rem .5rem;
+  width: calc(100% - 6rem);
+}
+
+.Login .banner {
+  width: 100%;
+  border-radius: .5rem;
 }

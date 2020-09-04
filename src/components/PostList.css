@@ -21,10 +21,20 @@
 
 .postTitle {
   width: calc(85% - 2rem);
-  padding: .5rem 1rem;
+  padding: .7rem 1rem;
 }
 
 .postAuthor {
   width: calc(15% - 2rem);
-  padding: .5rem 1rem;
+  padding: .7rem 1rem;
+}
+
+.postList {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.postList .noposts {
+  color: #646464;
+  margin: 2rem auto;
 }

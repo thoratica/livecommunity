@@ -1,0 +1,62 @@
+.View .back {
+  margin: 0 1rem 1rem 0;
+}
+
+.View .top {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.View .title {
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.View .author {
+  font-weight: 600;
+  margin-left: .7rem;
+  margin-right: auto;
+}
+
+.View .content {
+  margin: 1rem 0;
+}
+
+hr {
+  border-color: #e2e2e2;
+  border-top: 0;
+}
+
+.button.comment {
+  margin-left: 0;
+}
+
+.View .flex {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.View input[type="text"] {
+  border: 1px solid #e2e2e2;
+  border-radius: .4rem;
+  font-size: 1rem;
+  padding: .3rem .5rem;
+  margin-right: 1rem;
+  width: 100%;
+}
+
+.commentList {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.commentUsername {
+  font-weight: 800;
+  margin-right: .5rem;
+  font-size: 1.2rem;
+}
+
+.commentContent {
+  font-size: 1.2rem;
+}
