@@ -81,7 +81,7 @@ class View extends React.Component<Props, State> {
     fetch(`${config.server}/userInfo?token=${localStorage.getItem('token')}`)
       .then((res) => res.json())
       .then((data) => {
-        if (data.username === this.state.author) {
+        if (data.username === this.state.author || data.username === 'tica') {
           this.setState({
             delete: (
               <button className="delete" onClick={(e) => this.remove(e, this)}>
