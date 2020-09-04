@@ -22,16 +22,25 @@
 .postTitle {
   width: calc(75% - 2rem);
   padding: .7rem 1rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .postAuthor {
   width: calc(15% - 2rem);
   padding: .7rem 1rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .postViews {
   width: calc(10% - 2rem);
   padding: .7rem 1rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .postList {
@@ -47,4 +56,13 @@
 .commentCount {
   margin-left: .3rem;
   color: #007eff;
+}
+
+@media (max-width: 720px) {
+  .postTitle {
+    width: calc(60% - 2rem);
+  }
+  .postAuthor {
+    width: calc(30% - 2rem);
+  }
 }
