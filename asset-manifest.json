@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cbe19591.chunk.css",
+    "main.js": "/static/js/main.fd0332c0.chunk.js",
+    "main.js.map": "/static/js/main.fd0332c0.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a1bcccdb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a1bcccdb.js.map",
+    "static/css/2.5c17b9f1.chunk.css": "/static/css/2.5c17b9f1.chunk.css",
+    "static/js/2.5be1293a.chunk.js": "/static/js/2.5be1293a.chunk.js",
+    "static/js/2.5be1293a.chunk.js.map": "/static/js/2.5be1293a.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.0c50dc6a2688451dd02445cc06aabb38.js": "/precache-manifest.0c50dc6a2688451dd02445cc06aabb38.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.5c17b9f1.chunk.css.map": "/static/css/2.5c17b9f1.chunk.css.map",
+    "static/css/main.cbe19591.chunk.css.map": "/static/css/main.cbe19591.chunk.css.map",
+    "static/js/2.5be1293a.chunk.js.LICENSE.txt": "/static/js/2.5be1293a.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/Metropolis-ThinItalic.9843c157.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a1bcccdb.js",
+    "static/css/2.5c17b9f1.chunk.css",
+    "static/js/2.5be1293a.chunk.js",
+    "static/css/main.cbe19591.chunk.css",
+    "static/js/main.fd0332c0.chunk.js"
+  ]
+}
