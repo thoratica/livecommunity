@@ -3,6 +3,7 @@ import socketio from 'socket.io-client';
 import OpenGraph from 'set-open-graph';
 import fetch from 'node-fetch';
 import Markdown from 'react-markdown/with-html';
+import { Link } from 'react-router-dom';
 import config from '../config.json';
 import './View.css';
 
@@ -54,9 +55,6 @@ class View extends React.Component<Props, State> {
     eval(`document.querySelectorAll('pre code').forEach((block) => {
       hljs.highlightBlock(block);
     });`)
-  }
-  back() {
-    window.location.href = '/';
   }
   comment(e: any, sans: any) {
     e.preventDefault();
@@ -126,9 +124,9 @@ class View extends React.Component<Props, State> {
     }
     return (
       <div className="View">
-        <button className="back" onClick={this.back}>
+        <Link to="/" className="button back">
           목록으로
-        </button>
+        </Link>
         <div className="top">
           <div className="title">{this.state.title}</div>
           <div className="author">by {this.state.author}</div>
